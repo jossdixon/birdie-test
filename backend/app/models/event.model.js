@@ -1,22 +1,23 @@
 module.exports = (sequelize, Sequelize) => {
   const Event = sequelize.define("event", {
     id: {
-      type: Sequelize.STRING
+      type: Sequelize.INTEGER,
+      primaryKey: true
     },
     event_type: {
       type: Sequelize.STRING
     },
     visit_id: {
-      type: Sequelize.STRING
+      type: Sequelize.INTEGER
     },
     timestamp: {
-      type: Sequelize.STRING
+      type: Sequelize.DATE
     },
     caregiver_id: {
-      type: Sequelize.STRING
+      type: Sequelize.INTEGER
     },
     care_recipient_id: {
-      type: Sequelize.STRING
+      type: Sequelize.INTEGER
     },
     mood: {
       type: Sequelize.STRING
