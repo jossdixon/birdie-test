@@ -12,8 +12,13 @@ const EventsList = () => {
   const getEvents = () => {
     axios.get('http://localhost:8080/api/events')
       .then(response => {
-        setEvents(response.data);
         console.log(response.data);
+        console.log(response.data.map(ev => {
+          return JSON.parse(ev.payload)
+        }));
+        setEvents(response.data.map(ev => {
+          return JSON.parse(ev.payload)
+        }));
       })
       .catch(e => {
         console.log(e);

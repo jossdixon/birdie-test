@@ -2,7 +2,6 @@ const EventCard = ({ event }) => {
 
   const niceDate = (stamp) => {
     const date = new Date(stamp);
-    console.log(date);
     return date.toDateString();
   }
 
