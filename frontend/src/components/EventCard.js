@@ -13,6 +13,15 @@ const EventCard = ({ event }) => {
     return str.join(' ');
   }
 
+  const entries = Object.entries(event).filter(e => !e.includes('id') && !e.includes('timestamp'));
+  console.log(entries);
+
+  // const headers = Object.keys(event).filter(e => !e.includes('id') && !e.includes('timestamp'));
+
+  // const vals = event.map((e) => {
+  //   return headers.map(i => e[i]);
+  // })
+
   return(
     <div>
       <div className="main-card">
@@ -20,7 +29,8 @@ const EventCard = ({ event }) => {
             <p>{titleText(event.event_type)}</p>
             <p>{niceDate(event.timestamp)}</p>
         </div>
-          <strong>Caregiver ID:</strong><p>{event.caregiver_id}</p>
+        <div className="card-body">
+        </div>
       </div>
     </div>
   )

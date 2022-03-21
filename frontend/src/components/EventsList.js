@@ -12,7 +12,6 @@ const EventsList = () => {
   const getEvents = () => {
     axios.get('http://localhost:8080/api/events')
       .then(response => {
-        console.log(response.data);
         console.log(response.data.map(ev => {
           return JSON.parse(ev.payload)
         }));
