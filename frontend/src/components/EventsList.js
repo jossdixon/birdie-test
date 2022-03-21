@@ -20,10 +20,16 @@ const EventsList = () => {
       })
   };
 
+  const sortedEvents = (events) => {
+    return events?.sort((a, b) => {
+      return new Date(a.timestamp) > new Date(b.timestamp) ? -1 : 1
+    });
+  };
+
   return (
     <div className="cards-container">
       <div>
-        {events && events.map((ev) => (
+        {events && sortedEvents(events).map((ev) => (
           <div key={ev.id}>
             <EventCard event={ev}/>
           </div>
