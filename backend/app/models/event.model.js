@@ -10,18 +10,15 @@ const Event = function (event) {
   this.mood = event.mood
 };
 
-Event.getAll = (title, result) => {
-  let query = "SELECT * FROM events";
-  if (title) {
-    query += ` WHERE title LIKE '%${title}%'`;
-  }
+Event.getAll = (result) => {
+  let query = "SELECT * FROM events LIMIT 20";
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);
       result(null, err);
       return;
     }
-    console.log("tutorials: ", res);
+    console.log("Events: ", res);
     result(null, res);
   });
 };
