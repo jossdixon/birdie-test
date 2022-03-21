@@ -6,8 +6,8 @@ const Event = function (tutorial) {
   this.published = tutorial.published;
 };
 
-Tutorial.getAll = (title, result) => {
-  let query = "SELECT * FROM tutorials";
+Event.getAll = (title, result) => {
+  let query = "SELECT * FROM events";
   if (title) {
     query += ` WHERE title LIKE '%${title}%'`;
   }
