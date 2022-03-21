@@ -21,9 +21,10 @@ const EventsList = () => {
   };
 
   const sortedEvents = (events) => {
-    return events?.sort((a, b) => {
-      return new Date(a.timestamp) > new Date(b.timestamp) ? -1 : 1
-    });
+    const sorted = events?.sort((a, b) => {
+      return new Date(b.timestamp) - new Date(a.timestamp);
+    })
+    return sorted;
   };
 
   return (
