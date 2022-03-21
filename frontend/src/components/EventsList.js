@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useState, useEffect } from "react";
-// import EventDataService from '../services/EventService.js'
+import EventCard from "./EventCard";
 
 const EventsList = () => {
   const [events, setEvents] = useState(null);
@@ -21,13 +21,15 @@ const EventsList = () => {
   };
 
   return (
-  <div>
-    {events && events.map((event) => (
-      <div key={event.id}>
-        <p>{event.event_type}</p>
+    <div className="cards-container">
+      <div>
+        {events && events.map((ev) => (
+          <div key={ev.id}>
+            <EventCard event={ev}/>
+          </div>
+      ))}
       </div>
-    ))}
-  </div>
+    </div>
 )
 }
 
