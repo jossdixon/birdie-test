@@ -3,5 +3,7 @@ module.exports = app => {
   var router = require("express").Router();
 
   //Retrieve all tutorials
-  router.get("/", tutorials.findAll);
+  router.get("/", events.findAll);
+
+  app.use('/api/events', router);
 };
