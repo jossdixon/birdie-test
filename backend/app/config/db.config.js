@@ -1,14 +1,9 @@
 module.exports = {
   HOST: "birdie-test.cyosireearno.eu-west-2.rds.amazonaws.com",
+  TYPE: "MySQL",
   USER: "test-read",
-  PASSWORD: "xnxPp6QfZbCYkY8456",
+  PASSWORD: "xnxPp6QfZbCYkY8",
   DB: "birdietest",
-  dialect: "mysql",
-  table: "events",
-  pool: {
-    max: 5,
-    min: 0,
-    acquire: 30000,
-    idle: 10000
-  }
-};
+  TABLE: "events",
+  PORT: 3306
+}

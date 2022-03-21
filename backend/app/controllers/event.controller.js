@@ -1,24 +1,12 @@
-const db = require("../models");
-const Event = db.events;
-const Op = db.Sequelize.Op;
+const Event = require("../models/event.model.js");
 
-// Retrieve all Events from the database.
 exports.findAll = (req, res) => {
-  const type = req.query.event_type;
-  var condition = type ? { type: { [Op.like]: `%${type}%` } } : null;
-  Event.findAll({ where: condition })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
+  Event.getAll((err, data) => {
+    if (err)
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving events."
+          err.message || "Some error occurred while retrieving tutorials."
       });
-    });
-};
-
-// Find a single Event with an id
-// exports.findOne = (req, res) => {
-
-// };
+    else res.send(data);
+  });
+}
