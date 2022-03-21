@@ -22,7 +22,7 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.STRING
     }
   });
-  return Tutorial;
+  return Event;
 };
 
 // {
