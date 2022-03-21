@@ -1,9 +1,13 @@
 const sql = require("./db.js");
 // constructor
-const Event = function (tutorial) {
-  this.title = tutorial.title;
-  this.description = tutorial.description;
-  this.published = tutorial.published;
+const Event = function (event) {
+  this.id = event.id,
+  this.event_type = event.event_type,
+  this.visit_id = event.visit_id,
+  this.timestamp = event.timestamp,
+  this.caregiver_id = event.caregiver_id,
+  this.care_recipient_id = event.care_recipient_id,
+  this.mood = event.mood
 };
 
 Event.getAll = (title, result) => {
@@ -21,3 +25,5 @@ Event.getAll = (title, result) => {
     result(null, res);
   });
 };
+
+module.exports = Event;
