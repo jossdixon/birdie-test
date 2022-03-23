@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&display=swap');
 
 * {
-  margin: 24px;
+  /* margin: 24px; */
   font-family: "Comfortaa";
   color: #3A606E;
 }
@@ -14,20 +14,35 @@ body {
 
 }
 
+.cards-container {
+  margin: 24px;
+}
+
 .main-card {
-  padding: 8px;
+  /* padding: 8px; */
   background-color: gainsboro;
   border-bottom: 4px solid #3A606E;
+  margin: 16px;
 }
 
 .card-head {
   font-weight: bold;
-  padding-top: 16px;
+  padding: 16px;
   margin: 0;
   display: flex;
   justify-content: space-between;
+  background-color: #3A606E;
+}
+
+.card-head p {
+  color: gainsboro;
+  margin: 0;
+  font-size: 20px;
 }
 
 .card-body {
   margin: 0;
+  text-align: center;
+  font-size: 18px;
+  padding: 16px;
 }
