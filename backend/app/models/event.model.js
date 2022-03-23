@@ -6,7 +6,7 @@ const Event = function (event) {
 };
 
 Event.getAll = (result) => {
-  let query = "SELECT * FROM events LIMIT 30";
+  let query = "SELECT * FROM events LIMIT 20";
   sql.query(query, (err, res) => {
     if (err) {
       console.log("error: ", err);
