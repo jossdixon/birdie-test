@@ -16,7 +16,7 @@ const EventCard = ({ event }) => {
   const keys = Object.keys(event).filter((e) => {
     // Filter out anything that is an id, is not a string or number
     return !e.includes('_id')
-    // && !e.includes('timestamp')
+    && !e.includes('timestamp')
     && !e.includes('type')
     && typeof event[e] === 'string'
   });
